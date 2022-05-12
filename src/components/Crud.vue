@@ -4,7 +4,7 @@
       :option="options"
       :config="formConfig"
       :data="formData"
-      :miniShow="3"
+      :mini-show="3"
       ref="defProform"
       form-type="filter"
     >

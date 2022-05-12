@@ -2,12 +2,11 @@
 
 vue3版本快速构建管理端页面
 ```
+<template>
 <el-pro-form
       :option="options"
-      :config="formConfig"
+      :config="config"
       :data="formData"
-      :miniShow="3"
-      ref="defProform"
       form-type="filter"
     >
     </el-pro-form>
@@ -19,5 +18,6 @@ vue3版本快速构建管理端页面
       @current-change="handleCurrentChange"
     >
     </el-pro-table>
+</ template>
 ```
 
