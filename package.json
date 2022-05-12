@@ -1,0 +1,23 @@
+{
+  "name": "pro-form-biz",
+  "version": "1.0.0",
+  "description": "超级表单",
+  "author": "zhangrongwu",
+  "license": "开源协议",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^1.1.4",
+    "@vueuse/core": "^7.7.0",
+    "element-plus": "^2.2.0",
+    "lodash": "^4.17.21",
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.0.4",
+    "sass": "1.45.0",
+    "vite": "^1.0.0-rc.13"
+  }
+}
