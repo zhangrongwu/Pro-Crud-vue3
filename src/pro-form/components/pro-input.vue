@@ -43,38 +43,45 @@ import {
   ref,
   reactive,
   watch,
-} from 'vue'
-import { globalConfig } from '../config'
+} from "vue";
+import { globalConfig } from "../config";
 
 export default defineComponent({
-  name: 'ELProInput',
-  props: ['config', 'modelValue'],
-  emits: ['update:modelValue'],
+  name: "ELProInput",
+  props: ["config", "modelValue"],
+  emits: ["update:modelValue"],
 
   setup(props, { emit, slots }) {
-    const config = props.config
-    let pvalue = ref(props.modelValue)
+    const config = props.config;
+    let pvalue = ref(props.modelValue);
     const computedConfig = computed(() => {
-      console.log(globalConfig.input)
+      console.log(globalConfig.input);
       if (config.props) {
-        return { ...globalConfig.input, ...config.props }
+        return { ...globalConfig.input, ...config.props };
       } else {
-        return globalConfig.input
+        return globalConfig.input;
       }
-    })
+    });
     const computeFunction = (fun, ...data) => {
       if (fun) {
-        fun(...data)
+        fun(...data);
       } else {
-        return false
+        return false;
       }
-    }
+    };
     watch(
       () => pvalue.value,
       (val) => {
-        emit('update:modelValue', val)
+        emit("update:modelValue", val);
       }
-    )
+    );
+
+    watch(
+      () => props.modelValue,
+      (val) => {
+        pvalue.value = val;
+      }
+    );
 
     return {
       props,
@@ -82,7 +89,7 @@ export default defineComponent({
       pvalue,
       computedConfig,
       computeFunction,
-    }
+    };
   },
-})
+});
 </script>

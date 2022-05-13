@@ -113,6 +113,8 @@ import ProInput from "./components/pro-input.vue";
 import ProRate from "./components/pro-rate.vue";
 import ProSlider from "./components/pro-slider.vue";
 import ProSelect from "./components/pro-select.vue";
+import ProTree from "./components/pro-tree.vue";
+
 import { globalConfig } from "./config";
 import FormActionBar from "./form-action-bar.vue";
 
@@ -133,6 +135,7 @@ export default defineComponent({
     ProInput,
     ProRadio,
     ProRate,
+    ProTree,
 
     ArrowDownBold,
     ArrowUpBold,
@@ -257,6 +260,10 @@ export default defineComponent({
       const validPromise = new Promise((resolve, reject) => {
         if (refForm.value) {
           refForm.value.resetFields();
+          // console.log("====================================");
+          // console.log(formData);
+          // console.log("====================================");
+          // formData.value = props.data;
         }
       });
       return validPromise;

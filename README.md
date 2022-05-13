@@ -3,7 +3,7 @@
 vue3版本快速构建管理端页面
 ```
 <template>
-<el-pro-form
+    <el-pro-form
       :option="options"
       :config="config"
       :data="formData"

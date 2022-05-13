@@ -25,17 +25,17 @@ interface proForm {
   tooltip: tooltip
 }
 export const proformProps = {
-  ...buildProps({
-    option: Object,
-    config: Object,
-    data: Object,
-    formType: {
-      type: String,
-      default: 'form',
-    },
-    miniShow: {
-      type: Number,
-      default: 2,
-    },
-  }),
+  // ...buildProps({
+  //   option: Object,
+  //   config: Object,
+  //   data: Object,
+  //   formType: {
+  //     type: String,
+  //     default: 'form',
+  //   },
+  //   miniShow: {
+  //     type: Number,
+  //     default: 2,
+  //   },
+  // }),
 }

@@ -50,6 +50,12 @@ export default defineComponent({
         emit('update:modelValue', val)
       }
     )
+    watch(
+      () => props.modelValue,
+      (val) => {
+        pvalue.value = val;
+      }
+    );
     return {
       props,
       config,

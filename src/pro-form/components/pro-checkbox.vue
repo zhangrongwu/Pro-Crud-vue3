@@ -71,6 +71,12 @@ export default defineComponent({
         emit('update:modelValue', val)
       }
     )
+    watch(
+      () => props.modelValue,
+      (val) => {
+        pvalue.value = val;
+      }
+    );
 
     const labelName = config.props.options.label
       ? config.props.options.label

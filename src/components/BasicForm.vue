@@ -260,6 +260,50 @@ const rule = [
     },
   },
   {
+    type: "tree",
+    name: "deptId",
+    label: "部门",
+    value: "",
+    col: {
+      span: 12,
+      labelWidth: 100,
+    },
+    multiple: true,
+    props: {
+      defaultProps: {
+        children: "children",
+        label: "name",
+        value: "id",
+      },
+      data: [
+        {
+          id: "1",
+          name: "xx公司",
+          children: [
+            {
+              id: "2",
+              name: "技术部",
+              children: [
+                { id: "4", name: "Java 组" },
+                { id: "5", name: "Web 组" },
+                { id: "6", name: "PHP 组" },
+                { id: "7", name: "Python 组" },
+              ],
+            },
+            { id: "3", name: "售后部" },
+          ],
+        },
+      ],
+    },
+    validate: [
+      {
+        required: true,
+        message: "请输入",
+        trigger: "change",
+      },
+    ],
+  },
+  {
     type: "colorPicker",
     name: "color",
     label: "颜色",

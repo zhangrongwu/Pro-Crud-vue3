@@ -252,6 +252,13 @@ export const globalConfig = {
     showAlpha: false,
     colorFormat: "hex",
   },
+  tree: {
+    disabled: false,
+    size: "default",
+    multiple: false,
+    placeholder: "请选择",
+    clearable: false,
+  },
   transfer: {
     disabled: false,
     filterable: false,

@@ -26,44 +26,49 @@ import {
   ref,
   reactive,
   watch,
-} from 'vue'
-import { globalConfig } from '../config'
+} from "vue";
+import { globalConfig } from "../config";
 
 export default defineComponent({
-  name: 'ELProRadio',
-  props: ['config', 'modelValue'],
-  emits: ['update:modelValue'],
+  name: "ELProRadio",
+  props: ["config", "modelValue"],
+  emits: ["update:modelValue"],
 
   setup(props, { emit, slots }) {
-    const config = props.config
-    let pvalue = ref(props.config.value)
+    const config = props.config;
+    let pvalue = ref(props.config.value);
     const computedConfig = computed(() => {
-      console.log('====================================')
-      console.log(config)
-      console.log('====================================')
-      return { ...globalConfig.radio, ...config }
-    })
+      console.log("====================================");
+      console.log(config);
+      console.log("====================================");
+      return { ...globalConfig.radio, ...config };
+    });
     const computeFunction = (fun, ...data) => {
       if (fun) {
-        fun(...data)
+        fun(...data);
       } else {
-        return false
+        return false;
       }
-    }
+    };
     watch(
       () => pvalue.value,
       (val) => {
-        emit('update:modelValue', val)
+        emit("update:modelValue", val);
       }
-    )
-
+    );
+    watch(
+      () => props.modelValue,
+      (val) => {
+        pvalue.value = val;
+      }
+    );
     return {
       props,
       pvalue,
       config,
       computedConfig,
       computeFunction,
-    }
+    };
   },
-})
+});
 </script>
