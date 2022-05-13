@@ -1,0 +1,78 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "docs",
+      "version": "1.0.0",
+      "description": "pro组件文档",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "author": "zhangrongwu",
+      "license": "MIT"
+    },
+    "prefix": "/Users/zhangrongwu/Desktop/pro-form/pro-form/docs"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/Users/zhangrongwu/.pnpm-store/v3",
+    "virtualStoreDir": "/Users/zhangrongwu/Desktop/pro-form/pro-form/docs/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/Users/zhangrongwu/Desktop/pro-form/pro-form/docs",
+    "stage": "resolution_started"
+  },
+  "4 error pnpm": {
+    "code": "ERR_PNPM_META_FETCH_FAIL",
+    "attempts": 1,
+    "err": {
+      "name": "Error",
+      "message": "GET https://registry.npmjs.org/pnpm: request to https://registry.npmjs.org/pnpm failed, reason: Socket timeout",
+      "code": "ERR_PNPM_META_FETCH_FAIL",
+      "stack": "Error: GET https://registry.npmjs.org/pnpm: request to https://registry.npmjs.org/pnpm failed, reason: Socket timeout\n    at RetryOperation._fn (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:85701:19)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)"
+    }
+  },
+  "5 debug pnpm": "Using cached meta from /Users/zhangrongwu/Library/Caches/pnpm/metadata/registry.npmjs.org/pnpm.json",
+  "6 debug pnpm:update-check": {
+    "currentVersion": "6.32.2",
+    "latestVersion": "7.0.1"
+  },
+  "7 debug pnpm:request-retry": {
+    "attempt": 1,
+    "error": {
+      "type": "system",
+      "errno": "ERR_SOCKET_TIMEOUT",
+      "code": "ERR_SOCKET_TIMEOUT"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 10000,
+    "url": "https://registry.npmjs.org/vuepress"
+  },
+  "8 debug pnpm:request-retry": {
+    "attempt": 2,
+    "error": {
+      "type": "system",
+      "errno": "ERR_SOCKET_TIMEOUT",
+      "code": "ERR_SOCKET_TIMEOUT"
+    },
+    "maxRetries": 2,
+    "method": "GET",
+    "timeout": 60000,
+    "url": "https://registry.npmjs.org/vuepress"
+  },
+  "9 error pnpm": {
+    "code": "ERR_PNPM_META_FETCH_FAIL",
+    "attempts": 1,
+    "pkgsStack": [],
+    "err": {
+      "name": "pnpm",
+      "message": "GET https://registry.npmjs.org/vuepress: request to https://registry.npmjs.org/vuepress failed, reason: Socket timeout",
+      "code": "ERR_PNPM_META_FETCH_FAIL",
+      "stack": "pnpm: GET https://registry.npmjs.org/vuepress: request to https://registry.npmjs.org/vuepress failed, reason: Socket timeout\n    at RetryOperation._fn (/usr/local/lib/node_modules/pnpm/dist/pnpm.cjs:85701:19)\n    at processTicksAndRejections (internal/process/task_queues.js:93:5)"
+    }
+  }
+}

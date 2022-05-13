@@ -1,7 +1,7 @@
 {
-  "name": "pro-form-biz",
+  "name": "pro-biz",
   "version": "1.0.0",
-  "description": "超级表单",
+  "description": "pro-vue3 组件",
   "author": "zhangrongwu",
   "license": "开源协议",
   "scripts": {
