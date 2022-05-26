@@ -1,45 +1,13 @@
 <template>
-  <el-select
-    ref="treeSelect"
+  <el-tree-select
     v-model="pvalue"
-    :disabled="computedConfig.disabled"
+    :data="treeData"
     :multiple="computedConfig.multiple"
-    :placeholder="computedConfig.placeholder"
-    :clearable="true"
-    :collapse-tags="computedConfig.collapseTags"
-    filterable
-    :size="computedConfig.size"
-    @visible-change="handleOptionHidden"
-  >
-    <el-option value="" style="display: none" />
-    <el-option
-      v-for="(item, itemIndex) in options"
-      :key="itemIndex"
-      style="display: none"
-      :label="item[getTreeProps.label]"
-      :value="item[getNodekey]"
-    />
-    <!--       :default-expand-all="computeBoolen(computedConfig.defaultExpandAll, false)"
- -->
-    <el-tree
-      ref="tree"
-      :data="treeData"
-      :node-key="getNodekey"
-      :show-checkbox="computedConfig.multiple"
-      :expand-on-click-node="false"
-      :props="getTreeProps"
-      :highlight-current="true"
-      class="select-tree"
-      @check="handleCheckChange"
-      @node-click="handleNodeClick"
-    >
-      <template #default="{ node, data }" class="tree-node">
-        <span style="margin-left: 10px; font-size: 14px">
-          {{ data[getTreeProps.label] }}</span
-        >
-      </template>
-    </el-tree>
-  </el-select>
+    :show-checkbox="computedConfig.multiple"
+    :props="getTreeProps"
+    :node-key="getNodekey"
+  />
+  <!-- <el-tree-select v-model="value" :data="data" multiple show-checkbox /> -->
 </template>
 
 <script lang="ts">
@@ -130,7 +98,7 @@ export default defineComponent({
     watch(
       () => pvalue.value,
       (val) => {
-        emit("update:modelValue", val);
+        // emit("update:modelValue", val);
       }
     );
     watch(
@@ -157,7 +125,82 @@ export default defineComponent({
         }
       }
     );
+
+    const value = ref();
+
+    const data = [
+      {
+        value: "1",
+        label: "Level one 1",
+        children: [
+          {
+            value: "1-1",
+            label: "Level two 1-1",
+            children: [
+              {
+                value: "1-1-1",
+                label: "Level three 1-1-1",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "2",
+        label: "Level one 2",
+        children: [
+          {
+            value: "2-1",
+            label: "Level two 2-1",
+            children: [
+              {
+                value: "2-1-1",
+                label: "Level three 2-1-1",
+              },
+            ],
+          },
+          {
+            value: "2-2",
+            label: "Level two 2-2",
+            children: [
+              {
+                value: "2-2-1",
+                label: "Level three 2-2-1",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "3",
+        label: "Level one 3",
+        children: [
+          {
+            value: "3-1",
+            label: "Level two 3-1",
+            children: [
+              {
+                value: "3-1-1",
+                label: "Level three 3-1-1",
+              },
+            ],
+          },
+          {
+            value: "3-2",
+            label: "Level two 3-2",
+            children: [
+              {
+                value: "3-2-1",
+                label: "Level three 3-2-1",
+              },
+            ],
+          },
+        ],
+      },
+    ];
     return {
+      value,
+      data,
       tree,
       pvalue,
       treeData,
